@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<h1>Esta es la lista de productos</h1>
+
+
+{% block content2 %}
+  
+  
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+
+  {{ form.as_p }}
+
+
+
+  <button type="submit">Save</button>
+
+
+</form>
+
+{% endblock content2 %}
+{% if products %}
+
+<ol>
+{% for p in products %}
+
+
+
+
+
+<li>{{p.product_name}}</li>
+
+
+
+
+
+
+
+{% endfor %}
+
+</ol>
+
+
+{% endif %}
+
+
+
+
+<a href={% url 'form' %}>Ir a formulario</a>
+
+
+</body>
+</html>

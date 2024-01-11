@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+{% if lista_productos  %}
+
+<ul>
+
+{% for p in lista_productos %}
+
+<li>
+<a href="{% url 'details' id=p.id %}">{{p.product_name}} </a>
+
+
+</li>
+
+
+{% endfor %}
+
+
+</ul> 
+
+{% else %}
+<p>No hay ningun producto de momento.</p>
+
+
+
+{% endif %}
+
+
+
+
+<h2>LISTA CATEGORIAS</h2>
+
+
+{% if lista_categorias %}
+
+
+
+<ol>
+
+{% for c in lista_categorias %}
+
+
+<a href={% url 'filter' c.id %}>{{c.category_name}}</a>
+
+
+{% endfor %}
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+  
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href={% url 'form' %}>Ir a formulario</a>
+<a href={% url 'productsF' %}>Ir a lista de productos</a>
+
+
+</body>
+</html>

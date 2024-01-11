@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+{% if productos %}
+
+
+
+{% for producto in productos %}
+
+
+
+
+<p>{{producto.product_name}}</p>
+
+
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+{% endif %}
+
+
+<a href={% url 'home' %}>Volver a home</a>
+
+
+</body>
+</html>

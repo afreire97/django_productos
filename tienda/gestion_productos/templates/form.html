@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    {% block content %}
+    <h2>Create a new product</h2>
+  
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} <!-- Añade el token de seguridad CSRF -->
+  
+      {{ form.as_p }} <!-- Renderiza el formulario con sus campos -->
+  
+      <button type="submit">Save</button>
+    </form>
+  
+    <a href="{% url 'home' %}">Back to Home</a> <!-- Enlace para regresar a la página principal -->
+  {% endblock %}
+
+
+
+  {% block content2 %}
+  
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  
+
+    {{ form2.as_p }}
+
+
+
+    <button type="submit">Save</button>
+
+
+  </form>
+  
+  {% endblock content2 %}
+
+
+
+</body>
+</html>
